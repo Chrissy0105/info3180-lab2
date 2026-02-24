@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Christina Blye">
+  <meta name="description" content="This is the profile page for the INFO3180 lab2 assignment.">
+  <title>Profile</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+
+<body>
+  <nav class="top-nav">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('profile') }}">Profile</a>
+  </nav>
+
+  <main class="page">
+    <section class="profile-card">
+      <header class="profile-hero">
+        <div class="avatar-wrap">
+          <img
+            src="{{ url_for('static', filename='Snapchat-1691720374.jpg') }}"
+            alt="Profile picture"
+            class="avatar"
+          >
+        </div>
+
+        <h1 class="name">{{ full_name }}</h1>
+        <p class="handle">@{{ username }}</p>
+        <p class="meta">{{ location }}</p>
+        <p class="meta">Joined {{ joined }}</p>
+      </header>
+
+      <div class="profile-body">
+        <p class="bio">{{ bio }}</p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">{{ posts }}</div>
+            <div class="stat-label">Posts</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-num">{{ following }}</div>
+            <div class="stat-label">Following</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-num">{{ followers }}</div>
+            <div class="stat-label">Followers</div>
+          </div>
+        </div>
+
+        <button type="button" class="follow-btn">Follow</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
